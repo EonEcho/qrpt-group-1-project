@@ -12,7 +12,13 @@ export class automationPageClass extends BasePage {
     subBtn: By = By.id('subscribe')
     subText:By = By.id('success-subscribe')
 
-    addTocart: By = By.className('btn btn-default add-to-cart')
+    //addTocart: By = By.className('btn btn-default add-to-cart')
+    nameInput: By = By.name('name')
+    emailInput:By = By.name('email')
+    subjectInput: By = By.name('subjet')
+    msgInput: By = By.name('message')
+    sbmtBtn: By = By.name('submit')
+    submissionmsg:By = By.className('status alert alert-success')
 
 
 
