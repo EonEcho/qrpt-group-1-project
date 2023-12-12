@@ -4,29 +4,65 @@ const fs = require('fs')// calling library file system
 const automationPage = new automationPageClass()
 
 
-test ('category ', async()=>{
+
+test ('womenscategory ', async()=>{
     await automationPage.navigate()
-    await automationPage.click(automationPage.plusIcon)
+    await automationPage.click(automationPage.plusIcon1)
     
-    let resultText = await automationPage.getResultsCategory()
-    expect (resultText).toContain("DRESS\nTOPS\nSAREE")
+    let Wd = await automationPage.getText(automationPage.womenDress)
+    expect(Wd).toContain('DRESS')
+
+    let Wt = await automationPage.getText(automationPage.womenTop)
+    expect(Wt).toContain('TOP')
+
+    let Ws = await automationPage.getText(automationPage.womenSaree)
+    expect(Ws).toContain('SAREE')
+
+
+})
+
+
+
+
+test ('menscategory ', async()=>{
+    await automationPage.navigate()
+    await automationPage.click(automationPage.plusIcon2)
+    
+    let Mt = await automationPage.getText(automationPage.menTshirt)
+    expect(Mt).toContain('TSHIRTS')
+
+    let Mj = await automationPage.getText(automationPage.menJeans)
+    expect(Mj).toContain('JEANS')
+
     
 
 
+})
 
-    await fs.writeFile(`${__dirname}/category.png`,
-    await automationPage.driver.takeScreenshot(), "base64",   //used .driver here since it is a built in method in selenium
-    (e) => {
-        if (e) console.error(e)
-        else console.log('Saved Succesfully')
-    }
-    )
-   fs.writeFile(`${__dirname}/category.txt`, resultText, (e) => {
-       if (e) console.error(e)
-       else console.log('saved Succesfully')
-   })
+
+
+test ('kidscategory ', async()=>{
+    await automationPage.navigate()
+    await automationPage.click(automationPage.plusIcon3)
+    
+    let Kd = await automationPage.getText(automationPage.kidDress)
+    expect(Kd).toContain('DRESS')
+
+    let Kt = await automationPage.getText(automationPage.kidTS)
+    expect(Kt).toContain('TOPS & SHIRTS')
+
+    
+
 
 })
 afterAll(async () => {
    await automationPage.driver.quit()
 })
+
+
+
+
+
+
+
+

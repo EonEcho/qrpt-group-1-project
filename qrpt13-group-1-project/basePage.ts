@@ -41,6 +41,8 @@ export class BasePage {
     async getText(elementBy: By): Promise<string> {
         return (await this.getElement(elementBy)).getText(); 
     }; 
+
+    
     async getAttribute(elementBy: By, attribute: string): Promise<string> {
         return (await this.getElement(elementBy)).getAttribute(attribute); 
     }; 
@@ -52,5 +54,9 @@ export class BasePage {
         .move({origin: originElement, x:0, y:10, duration: moveDurationMS})
         .pause(moveDurationMS)
     }; 
+    
+    timeout(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
 };
