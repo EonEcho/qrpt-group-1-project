@@ -29,6 +29,35 @@ test ('removing', async()=>{
     let Cart1= await automationPage.getText(automationPage.cartBlue)
     expect(Cart1).toContain('Blue Top')
 
+    let Cart2 = await automationPage.getText(automationPage.cartMenTs)
+    expect(Cart2).toContain('Men Tshirt')
+
+   let Cart3 = await automationPage.getText(automationPage.cartSleeveless)
+    expect(Cart3).toContain('Sleeveless Dress')
+
+    let Cart4 = await automationPage.getText(automationPage.cartStylishdress)
+    expect(Cart4).toContain('Stylish Dress')
+
+
+    await automationPage.click(automationPage.cartDel1)
+    expect(automationPage.cartTable).not.toContain('Blue Top')
+
+    await automationPage.click(automationPage.cartDel1)
+    expect(automationPage.cartTable).not.toContain('Men Tshirt')
+
+    await automationPage.click(automationPage.cartDel1)
+    expect(automationPage.cartTable).not.toContain('Sleeveless Dress')
+
+
+    //await automationPage.click(automationPage.cartDel1)
+    //expect(automationPage.cartTable).not.toContain('Stylish Dress')
+
+    
+
+    
+
+
+
     //
      //automationPage.timeout(5000)
      

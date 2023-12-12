@@ -31,10 +31,17 @@ export class automationPageClass extends BasePage {
 
     cartBlue: By = By.xpath('(//a[text()="Blue Top"])[1]')
     cartMenTs: By = By.xpath('(//a[text()="Men Tshirt"])[1]')
-    cartWintertop:By = By.xpath('(//a[text()="Winter Top"])[1]')
+    
     cartSleeveless: By = By.xpath('(//a[text()="Sleeveless Dress"])[1]')
+    cartStylishdress: By = By.xpath('(//a[text()="Stylish Dress"])[1]')
 
-    products: string[] = [];
+    cartDel1: By = By.xpath('(//a[@class="cart_quantity_delete"])[1]')
+    cartDel2: By = By.xpath('(//a[@class="cart_quantity_delete"])[2]')
+    cartDel3: By = By.xpath('(//a[@class="cart_quantity_delete"])[3]')
+    cartDel4: By = By.xpath('(//a[@class="cart_quantity_delete"])[4]')
+    cartTable: By = By.id('#cart_info')
+
+    //products: string[] = [];
     searchBar: By = By.id('search_product'); 
     icon: By = By.id('submit_search')
     results: By = By.css('.features_items'); 
