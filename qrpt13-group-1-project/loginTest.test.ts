@@ -1,6 +1,6 @@
 import { Builder, Capabilities, WebDriver, By } from 'selenium-webdriver';
 const chromedriver = require('chromedriver');
-import { GPOne } from './pageObjectGPOne';
+import { GPOne } from './pageObjectLogin';
 
 describe('Login', () => {
     let driver: WebDriver;
