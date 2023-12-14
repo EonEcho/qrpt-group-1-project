@@ -21,8 +21,12 @@ describe('Login', () => {
     test('Testing login feature', async () => {
         await gp.navigate();
         await gp.login('bitoso2203@cumzle.com', '123456');
+        await sleep(2000);
 
         const isLoggedIn = await gp.isLoggedIn();
         expect(isLoggedIn).toBe(true);
     });
+    async function sleep(ms: number) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 });
